@@ -1,0 +1,24 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="style.css">
+<title>View All Bevs</title>
+</head>
+<body>
+<div>
+	<form>
+		<table>
+			<tr th:each="currentBev : ${beverages}">
+				<td th:text="${currentBev.name}" />
+				<td th:text="${currentBev.flavor}" />
+				<td><a th:href="@{/edit/{id}(id=${currentBev.id})}">Edit</a></td>
+				<td><a th:href="@{/delete/{id}(id=${currentBev.id})}">Delete</a></td>
+			</tr>
+		</table>
+	</form>
+	</div>
+	<nav>
+	<a href="../inputBev">Add a new bev</a>
+	</nav>
+</body>
+</html>

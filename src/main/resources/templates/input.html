@@ -1,0 +1,21 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="style.css">
+<title>Insert New Bev</title>
+</head>
+<body>
+<div>
+	<form th:object="${newBev}"
+		th:action="@{/update/{id}(id=${newBev.id})}" method=POST>
+		Name: <input name="name" size="20" th:field="*{name}"><br />
+		Flavor: <input name="flavor" size="20"
+			th:field="*{flavor}"><br /> <br /> <input name="Submit"
+			type="submit" value="submit" />
+	</form>
+	</div>
+	<nav>
+	<a href="../viewAll">View All Bevs</a>
+	</nav>
+</body>
+</html>
